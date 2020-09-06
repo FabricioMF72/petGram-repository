@@ -4,7 +4,9 @@
   "description": "In this proyect i create a video catalog simulating Netflix, using technologies such as JS, CSS, REACTJS, REACT ROUTER and REACT REDUX",
   "main": "index.js",
   "scripts": {
+    "vercel-build": "npm run build",
     "build": "webpack",
+    "lint": "standard",
     "dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +19,7 @@
   "license": "ISC",
   "devDependencies": {
     "html-webpack-plugin": "^3.2.0",
+    "standard": "^14.3.4",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
@@ -28,5 +31,11 @@
     "babel-loader": "^8.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
+  },
+  "standard":{
+    "ignore":["/api**"]
+  },
+  "eslintConfig": {
+    "extends": ["./node_modules/standard/eslintrc.json"]
   }
 }
