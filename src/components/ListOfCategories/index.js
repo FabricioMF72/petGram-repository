@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Category } from '../Category'
-import { Item, List} from './style'
-import { categories } from '../../../api/db.json'
+
+import { List, Item } from './style'
 
 export const ListOfCategories = () => {
+  const [categories, setCategories] = useState([])
+
+  useEffect(function () {
+    window.fetch('https://pet-gram-repository.vercel.app/categories')
+      .then(res => res.json())
+      .then(response => {
+        setCategories(response)
+      })
+  }, [])
+
   return (
     <List>
       {
